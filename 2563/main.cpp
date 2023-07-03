@@ -14,15 +14,35 @@ int main()
 {
     Square* sqr;
     int cnt;
-    int area = 300;
+    int area = 0;
+    bool paper[100][100] = {0, };
+
     cin >> cnt;
     sqr = new Square[cnt];
+
 
     //A + B + C - AnB - BnC - CnA + AnBnC
     for (int i = 0; i < cnt; i++)
     {
-        
+        cin >> sqr[i].left >> sqr[i].bottom;
+        for (int x = 0; x < 10; x++)
+        {
+            for (int y = 0; y < 10; y++)
+            {
+                paper[x + sqr[i].left][y + sqr[i].bottom] = true;
+            }
+        }
+    }
+    for (int x = 0; x < 100; x++)
+    {
+        for (int y = 0; y < 100; y++)
+        {
+            if (paper[x][y])
+                area++;
+        }
     }
 
+    cout << area;
+    
     return 0;
 }
