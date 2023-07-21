@@ -142,6 +142,15 @@ class Fine : public Derv1, public Derv2
     }
 };
 
+template <class Ts>
+void Out(Ts val)
+{
+    if (val == 0)
+        cout << "ttt\n";
+    else
+        cout << "!ttt\n";
+}
+
 int main()
 {
     // I my;
@@ -153,7 +162,14 @@ int main()
     // Third t(3);
 
     Fine f;
+    int d = 16;
     //cout << f.d;
+
+    Out(d);
+    Out(0);
+    Out(1);
+    Out(&f);
+    
 
     return 0;
 }
